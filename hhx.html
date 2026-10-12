@@ -409,6 +409,27 @@ footer .green{color:var(--green);}
   .lang-bar, nav{padding:0 1.5rem;}
   h1{font-size:2.5rem;}
 }
+/* Paper previews are cropped assets; no manuscript download is exposed. */
+.papers-heading{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:2rem;}
+.papers-heading h2{margin-bottom:0;}
+.paper-controls{display:flex;align-items:center;gap:1rem;white-space:nowrap;font-size:.75rem;color:var(--muted);}
+.paper-controls button{width:36px;height:36px;background:var(--surface);border:1px solid var(--border);color:var(--green);cursor:pointer;font-size:1rem;}
+.paper-controls button:disabled{opacity:.3;cursor:default;}
+.paper-controls button:focus-visible,.paper-track:focus-visible{outline:2px solid var(--green);outline-offset:4px;}
+.paper-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:20px;scrollbar-width:thin;scrollbar-color:var(--green) var(--surface);padding-bottom:16px;overscroll-behavior-x:contain;}
+.paper-card{flex:0 0 100%;min-width:0;scroll-snap-align:start;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);border:1px solid var(--border);background:var(--surface);}
+.paper-preview{position:relative;background:#fff;overflow:hidden;display:flex;align-items:flex-start;aspect-ratio:1/1.06;}
+.paper-preview img{width:100%;height:auto;display:block;pointer-events:none;user-select:none;}
+.paper-preview::after{content:'';position:absolute;bottom:0;left:0;right:0;height:12%;background:linear-gradient(transparent,#fff);backdrop-filter:blur(5px);mask-image:linear-gradient(transparent,#000);}
+.paper-info{padding:2rem;display:flex;flex-direction:column;justify-content:center;gap:1.2rem;}
+.paper-number{font-size:.72rem;color:var(--green);letter-spacing:.16em;}
+.paper-info h3{font-family:'Space Mono',monospace;font-size:clamp(1rem,2vw,1.25rem);line-height:1.6;overflow-wrap:anywhere;}
+.paper-venue{font-size:.85rem;color:var(--text2);line-height:1.7;}
+.paper-meta{display:flex;flex-wrap:wrap;gap:.6rem;}
+.paper-meta span{font-size:.72rem;border:1px solid var(--border);padding:.4rem .6rem;color:var(--green);}
+.paper-note{font-size:.72rem;color:var(--muted);margin-top:1rem;line-height:1.7;}
+@media(max-width:640px){.paper-card{grid-template-columns:1fr;}.paper-info{padding:1.4rem;}.paper-preview{aspect-ratio:1/1.02;}.papers-heading{align-items:flex-start;}.papers-heading h2{font-size:1.5rem;}.paper-controls{gap:.5rem;}}
+@media(prefers-reduced-motion:reduce){.paper-track{scroll-behavior:auto;}}
 </style>
 </head>
 <body class="lang-zh">
@@ -501,6 +522,30 @@ footer .green{color:var(--green);}
       <div class="about-body" data-i18n="research.r3.body">对深度学习模型在量化投资中的可解释性问题有浓厚兴趣，探索如何从训练好的模型中提取有意义的因子归因信息，辅助投资决策与风险管理。关注信号评估体系、组合构建方法及策略在真实交易约束下的表现。</div>
     </div>
   </div>
+</section>
+
+<section id="papers" class="reveal">
+  <div class="section-label">PUBLICATIONS // <span data-i18n="papers.label">论文</span></div>
+  <div class="papers-heading"><h2 data-i18n="papers.title">论文与投稿</h2><div class="paper-controls"><button type="button" data-paper-step="-1" aria-label="Previous paper">←</button><span id="paper-count" aria-live="polite">01 / 04</span><button type="button" data-paper-step="1" aria-label="Next paper">→</button></div></div>
+  <div class="paper-track" tabindex="0" aria-label="Paper carousel">
+    <article class="paper-card">
+      <div class="paper-preview"><img src="assets/papers/factor-models.webp" alt="First-page preview of Sequential versus Cross-Sectional Models for Multi-Factor Return Prediction in Chinese Equities: IC Stability, Loss Function Effects, and Factor Attribution" loading="lazy" draggable="false"></div>
+      <div class="paper-info"><div class="paper-number">PAPER 01</div><h3>Sequential versus Cross-Sectional Models for Multi-Factor Return Prediction in Chinese Equities: IC Stability, Loss Function Effects, and Factor Attribution</h3><p class="paper-venue">BDCIA · 4th International Conference on Big Data, Computational Intelligence and Applications</p><div class="paper-meta"><span data-i18n="papers.factor-models.status">已录用</span><span data-i18n="papers.factor-models.role">第一作者</span></div></div>
+    </article>
+    <article class="paper-card">
+      <div class="paper-preview"><img src="assets/papers/target-representation.webp" alt="First-page preview of Forecasting five-day upside intensity across financial markets: Continuous magnitude and thresholded occurrence" loading="lazy" draggable="false"></div>
+      <div class="paper-info"><div class="paper-number">PAPER 02</div><h3>Forecasting five-day upside intensity across financial markets: Continuous magnitude and thresholded occurrence</h3><p class="paper-venue">Computational Economics</p><div class="paper-meta"><span data-i18n="papers.target-representation.status">编辑处理中 · WE</span><span data-i18n="papers.target-representation.role">第一作者 / 通讯作者</span></div></div>
+    </article>
+    <article class="paper-card">
+      <div class="paper-preview"><img src="assets/papers/sparse-feedback.webp" alt="First-page preview of Auditable Sparse-Feedback Deployment for Cross-Domain Node Classification: Dual-Reference Harm and Transfer Boundaries" loading="lazy" draggable="false"></div>
+      <div class="paper-info"><div class="paper-number">PAPER 03</div><h3>Auditable Sparse-Feedback Deployment for Cross-Domain Node Classification: Dual-Reference Harm and Transfer Boundaries</h3><p class="paper-venue">Knowledge and Information Systems (KAIS)</p><div class="paper-meta"><span data-i18n="papers.sparse-feedback.status">审稿中 · UR</span><span data-i18n="papers.sparse-feedback.role">第一作者 / 通讯作者</span></div></div>
+    </article>
+    <article class="paper-card">
+      <div class="paper-preview"><img src="assets/papers/stein-risk.webp" alt="First-page preview of Complete Stein Risk for Parameter Selection in Adaptive Graph Smoothing" loading="lazy" draggable="false"></div>
+      <div class="paper-info"><div class="paper-number">PAPER 04</div><h3>Complete Stein Risk for Parameter Selection in Adaptive Graph Smoothing</h3><p class="paper-venue">Signal, Image and Video Processing (SIVP)</p><div class="paper-meta"><span data-i18n="papers.stein-risk.status">编辑处理中 · WE</span><span data-i18n="papers.stein-risk.role">共同第一作者 / 通讯作者</span></div></div>
+    </article>
+  </div>
+  <p class="paper-note" data-i18n="papers.note">仅展示首页摘要与关键词预览 · 投稿状态更新于 2026.10.12</p>
 </section>
 
 <section id="projects" class="reveal">
@@ -938,6 +983,17 @@ const i18n = {
     "research.r3.title":"模型可解释性与量化投资实践",
     "research.r3.body":"对深度学习模型在量化投资中的可解释性问题有浓厚兴趣，探索如何从训练好的模型中提取有意义的因子归因信息，辅助投资决策与风险管理。关注信号评估体系、组合构建方法及策略在真实交易约束下的表现。",
     "projects.title":"精选项目",
+    "papers.label":"论文",
+    "papers.title":"论文与投稿",
+    "papers.note":"仅展示首页摘要与关键词预览 · 投稿状态更新于 2026.10.12",
+    "papers.factor-models.status":"已录用",
+    "papers.factor-models.role":"第一作者",
+    "papers.target-representation.status":"编辑处理中 · WE",
+    "papers.target-representation.role":"第一作者 / 通讯作者",
+    "papers.sparse-feedback.status":"审稿中 · UR",
+    "papers.sparse-feedback.role":"第一作者 / 通讯作者",
+    "papers.stein-risk.status":"编辑处理中 · WE",
+    "papers.stein-risk.role":"共同第一作者 / 通讯作者",
     "status.wip":"进行中","status.done":"已完成",
     "p1.name":"大语言模型幻觉检测",
     "p1.desc":"从统计学视角量化大语言模型输出的事实不一致性，采用统计散度度量与校准框架建模 LLM 幻觉。",
@@ -1049,6 +1105,17 @@ const i18n = {
     "research.r3.title":"Model Interpretability & Quant Practice",
     "research.r3.body":"Strong interest in interpretability of deep learning models for quant investing. Exploring how to extract meaningful factor attributions from trained models to aid investment decisions and risk management. Focus on signal evaluation, portfolio construction, and strategy performance under realistic trading constraints.",
     "projects.title":"Selected Projects",
+    "papers.label":"Papers",
+    "papers.title":"Papers & Submissions",
+    "papers.note":"First-page abstract and keywords previews only · Status updated October 12, 2026",
+    "papers.factor-models.status":"Accepted",
+    "papers.factor-models.role":"First author",
+    "papers.target-representation.status":"With Editor · WE",
+    "papers.target-representation.role":"First / corresponding author",
+    "papers.sparse-feedback.status":"Under Review · UR",
+    "papers.sparse-feedback.role":"First / corresponding author",
+    "papers.stein-risk.status":"With Editor · WE",
+    "papers.stein-risk.role":"Co-first / corresponding author",
     "status.wip":"WIP","status.done":"Done",
     "p1.name":"LLM Hallucination Detection",
     "p1.desc":"Quantifying factual inconsistencies in LLM outputs from a statistical perspective. Statistical divergence measures and calibration frameworks for modeling hallucinations.",
@@ -1136,6 +1203,33 @@ const i18n = {
     "img.fig1":"Figure 1","img.fig2":"Figure 2","img.arch":"Architecture","img.add":"Add image here",
   }
 };
+
+const paperTrack = document.querySelector('.paper-track');
+const paperCards = [...paperTrack.querySelectorAll('.paper-card')];
+let paperFrame;
+let activePaper = 0;
+function updatePaperPosition(){
+  const index = Math.round(paperTrack.scrollLeft / (paperCards[0].offsetWidth + 20));
+  activePaper = index;
+  document.getElementById('paper-count').textContent = String(index + 1).padStart(2, '0') + ' / 04';
+  document.querySelector('[data-paper-step="-1"]').disabled = index === 0;
+  document.querySelector('[data-paper-step="1"]').disabled = index === paperCards.length - 1;
+}
+function movePaper(step){
+  const index = Math.round(paperTrack.scrollLeft / (paperCards[0].offsetWidth + 20));
+  const next = Math.max(0, Math.min(paperCards.length - 1, index + step));
+  paperTrack.scrollTo({left:paperCards[next].offsetLeft - paperCards[0].offsetLeft, behavior:matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+}
+document.querySelectorAll('[data-paper-step]').forEach(button => button.addEventListener('click', () => movePaper(Number(button.dataset.paperStep))));
+paperTrack.addEventListener('keydown', event => {
+  if(event.key === 'ArrowRight' || event.key === 'ArrowLeft'){event.preventDefault();movePaper(event.key === 'ArrowRight' ? 1 : -1);}
+});
+paperTrack.addEventListener('scroll', () => {cancelAnimationFrame(paperFrame);paperFrame=requestAnimationFrame(updatePaperPosition);},{passive:true});
+window.addEventListener('resize', () => {
+  paperTrack.scrollTo({left:paperCards[activePaper].offsetLeft - paperCards[0].offsetLeft, behavior:'instant'});
+  updatePaperPosition();
+});
+updatePaperPosition();
 
 let currentLang = 'zh';
 const typewriterSets = {
