@@ -438,6 +438,7 @@ footer .green{color:var(--green);}
 .project-figures a{display:block;background:#fff;padding:8px;border:1px solid var(--border);}
 .project-figures img{display:block;width:100%;height:auto;}
 .project-figures figcaption{font-size:.8rem;color:var(--text2);line-height:1.6;margin-top:.8rem;}
+.certificate-figure{max-width:620px;margin-inline:auto!important;}
 </style>
 </head>
 <body class="lang-zh">
@@ -578,12 +579,10 @@ footer .green{color:var(--green);}
     </a>
 
     <a class="project-card" onclick="openProject('p3');return false;" href="#">
-      <div class="proj-id">PROJECT_03 · 2025<span class="proj-status done" data-i18n="status.done">已完成</span></div>
-      <div class="proj-name" data-i18n="p3.name">多因子量化选股策略</div>
-      <div class="proj-desc" data-i18n="p3.desc">融合价值、动量、质量三类因子，采用 Spearman IC、IC_IR 及 Fama-MacBeth 截面回归验证有效性，完成含交易成本建模的全流程回测。</div>
-      <div class="proj-stack">
-        <span class="stag">Python</span><span class="stag">Fama-MacBeth</span><span class="stag">IC/IC_IR</span><span class="stag" data-i18n="p3.s1">回测</span>
-      </div>
+      <div class="proj-id">PROJECT_03 · 2026<span class="proj-status done" data-i18n="p3.badge">A 榜阶段性第 3 名</span></div>
+      <div class="proj-name" data-i18n="p3.name">AFAC2026：稀疏反馈下的自动化实验挑战</div>
+      <div class="proj-desc" data-i18n="p3.desc">负责团队研究路线与实验管理，围绕图节点分类和推荐任务开展稳定建模、离线验证与自动化实验。A 榜阶段性第 3 名，最终 B 榜第 18 名 / 846 队。</div>
+      <div class="proj-stack"><span class="stag" data-i18n="p3.keywords">图学习 · 推荐 · OOF 验证 · 自动化实验 Agent</span></div>
       <div class="proj-arrow" data-i18n="proj.view">→ 查看详情</div>
     </a>
 
@@ -856,37 +855,18 @@ footer .green{color:var(--green);}
 <div class="overlay" id="overlay-p3">
   <button class="overlay-close" onclick="closeProject()" data-i18n="overlay.close">✕ 关闭</button>
   <div class="overlay-inner">
-    <div class="overlay-breadcrumb">~/ <span data-i18n="nav.projects">projects</span> / multi-factor-strategy</div>
-    <h2 data-i18n="p3.name">多因子量化选股策略</h2>
-    <div class="overlay-meta">
-      <span><b data-i18n="meta.year">年份：</b>2025</span>
-      <span><b data-i18n="meta.type">类型：</b><span data-i18n="p3.type">研究 · 已完成</span></span>
-      <span><b data-i18n="meta.field">领域：</b><span data-i18n="p3.field">量化金融</span></span>
-    </div>
+    <div class="overlay-breadcrumb">~/ projects / afac2026</div>
+    <h2 data-i18n="p3.name">AFAC2026：稀疏反馈下的自动化实验挑战</h2>
+    <div class="overlay-meta"><span>2026</span><span data-i18n="p3.role">团队研究总负责人</span><span data-i18n="p3.field">图学习 · 自动化机器学习</span></div>
+    <div class="overlay-section"><div class="overlay-body" data-i18n="p3.overview">负责赛题拆解、技术路线规划、候选筛选与提交管理。围绕图结构数据的节点分类及推荐任务，融合节点特征与图结构信号，使用交叉验证、OOF 和多切分稳定性检查筛选模型，并建立实验记录、断点恢复和预算控制机制。</div></div>
     <div class="overlay-metrics">
-      <div class="metric-cell"><div class="metric-val">3</div><div class="metric-key" data-i18n="p3.m1">因子类别</div></div>
-      <div class="metric-cell"><div class="metric-val">IC/IR</div><div class="metric-key" data-i18n="p3.m2">有效性指标</div></div>
-      <div class="metric-cell"><div class="metric-val" data-i18n="p3.m3v">含成本</div><div class="metric-key" data-i18n="p3.m3">全流程回测</div></div>
+      <div class="metric-cell"><div class="metric-val">3</div><div class="metric-key" data-i18n="p3.m1">A 榜阶段性排名</div></div>
+      <div class="metric-cell"><div class="metric-val">18 / 846</div><div class="metric-key" data-i18n="p3.m2">证书记录的最终 B 榜排名</div></div>
+      <div class="metric-cell"><div class="metric-val">Agent</div><div class="metric-key" data-i18n="p3.m3">自动化实验与复现交付</div></div>
     </div>
-    <div class="overlay-section">
-      <div class="overlay-section-title" data-i18n="overlay.screenshots">截图 / 图表</div>
-      <div class="img-gallery">
-        <div class="img-slot"><img src="" alt=""><div class="img-placeholder"><div class="img-icon">📈</div><div class="img-label" data-i18n="p3.fig1">回测净值曲线</div><div class="img-sub" data-i18n="img.add">在此添加图片</div></div></div>
-        <div class="img-slot"><img src="" alt=""><div class="img-placeholder"><div class="img-icon">📊</div><div class="img-label" data-i18n="p3.fig2">因子 IC 衰减</div><div class="img-sub" data-i18n="img.add">在此添加图片</div></div></div>
-        <div class="img-slot img-full"><img src="" alt=""><div class="img-placeholder"><div class="img-icon">📉</div><div class="img-label" data-i18n="p3.fig3">分组收益</div><div class="img-sub" data-i18n="p3.fig3sub">十分位分组表现</div></div></div>
-      </div>
-    </div>
-    <div class="overlay-section">
-      <div class="overlay-section-title" data-i18n="overlay.overview">项目概述</div>
-      <div class="overlay-body" data-i18n="p3.overview">融合价值、动量、质量三类经典因子，构建 A 股多因子选股策略。采用 Spearman IC、IC_IR 评估因子单调性与稳定性；通过 Fama-MacBeth 截面回归检验因子在控制其他风险后的解释力；完成包含手续费、滑点等真实交易成本的全流程回测。</div>
-    </div>
-    <div class="overlay-section">
-      <div class="overlay-section-title" data-i18n="overlay.method">研究方法</div>
-      <div class="overlay-body" data-i18n="p3.method">因子层面采用横截面 Z-Score 标准化与行业市值中性化；组合构建采用分层加权法；回测引入真实交易摩擦，包括双边手续费、市场冲击模型与最小持仓约束。</div>
-    </div>
-    <div class="overlay-section">
-      <div class="overlay-section-title" data-i18n="overlay.stack">技术栈</div>
-      <div class="overlay-stack"><span class="overlay-stag">Python</span><span class="overlay-stag">Pandas</span><span class="overlay-stag">NumPy</span><span class="overlay-stag">Fama-MacBeth</span><span class="overlay-stag">Spearman IC</span><span class="overlay-stag" data-i18n="p3.s1">回测引擎</span></div>
+    <div class="overlay-section"><div class="overlay-body" data-i18n="p3.keywords">图学习 · 推荐 · OOF 验证 · 自动化实验 Agent</div></div>
+    <div class="project-figures">
+      <figure class="certificate-figure"><a href="assets/projects/afac2026-certificate.png" target="_blank" rel="noopener"><img src="assets/projects/afac2026-certificate.png" alt="AFAC2026 certificate: team 苦来兮苦, final B leaderboard rank 18 out of 846, dated August 31, 2026" loading="lazy"></a><figcaption data-i18n="p3.certificate">天池 AFAC2026 参赛证书 · 队伍“苦来兮苦” · B 榜第 18 名 · 2026.08.31</figcaption></figure>
     </div>
   </div>
 </div>
@@ -985,14 +965,17 @@ const i18n = {
     "p2.type":"研究 · 进行中",
     "p2.fig1":"Fig. 1 · ACAR 架构与组合执行流程",
     "p2.fig2":"Fig. 2 · 不同预测器的净值路径",
-    "p3.name":"多因子量化选股策略",
-    "p3.desc":"融合价值、动量、质量三类因子，采用 Spearman IC、IC_IR 及 Fama-MacBeth 截面回归验证有效性，完成含交易成本建模的全流程回测。",
-    "p3.s1":"回测",
-    "p3.type":"研究 · 已完成","p3.field":"量化金融",
-    "p3.m1":"因子类别","p3.m2":"有效性指标","p3.m3":"全流程回测","p3.m3v":"含成本",
-    "p3.fig1":"回测净值曲线","p3.fig2":"因子 IC 衰减","p3.fig3":"分组收益","p3.fig3sub":"十分位分组表现",
-    "p3.overview":"融合价值、动量、质量三类经典因子，构建 A 股多因子选股策略。采用 Spearman IC、IC_IR 评估因子单调性与稳定性；通过 Fama-MacBeth 截面回归检验因子在控制其他风险后的解释力；完成包含手续费、滑点等真实交易成本的全流程回测。",
-    "p3.method":"因子层面采用横截面 Z-Score 标准化与行业市值中性化；组合构建采用分层加权法；回测引入真实交易摩擦，包括双边手续费、市场冲击模型与最小持仓约束。",
+    "p3.name":"AFAC2026：稀疏反馈下的自动化实验挑战",
+    "p3.badge":"A 榜阶段性第 3 名",
+    "p3.desc":"负责团队研究路线与实验管理，围绕图节点分类和推荐任务开展稳定建模、离线验证与自动化实验。A 榜阶段性第 3 名，最终 B 榜第 18 名 / 846 队。",
+    "p3.role":"团队研究总负责人",
+    "p3.field":"图学习 · 自动化机器学习",
+    "p3.overview":"负责赛题拆解、技术路线规划、候选筛选与提交管理。围绕图结构数据的节点分类及推荐任务，融合节点特征与图结构信号，使用交叉验证、OOF 和多切分稳定性检查筛选模型，并建立实验记录、断点恢复和预算控制机制。",
+    "p3.keywords":"图学习 · 推荐 · OOF 验证 · 自动化实验 Agent",
+    "p3.m1":"A 榜阶段性排名",
+    "p3.m2":"证书记录的最终 B 榜排名",
+    "p3.m3":"自动化实验与复现交付",
+    "p3.certificate":"天池 AFAC2026 参赛证书 · 队伍“苦来兮苦” · B 榜第 18 名 · 2026.08.31",
     "p4.name":"世界渲染大赛参赛作品",
     "p4.desc":"使用 Blender 完成第十一届世界渲染大赛参赛作品。学习 3D 建模两年，熟练掌握 Blender 的建模、材质、灯光与渲染流程。",
     "p4.s1":"渲染","p4.s2":"灯光设计",
@@ -1119,14 +1102,17 @@ const i18n = {
     "p2.type":"Research · In progress",
     "p2.fig1":"Fig. 1 · ACAR architecture and portfolio execution",
     "p2.fig2":"Fig. 2 · Net-wealth paths across predictors",
-    "p3.name":"Multi-Factor Quant Stock Strategy",
-    "p3.desc":"Combining value, momentum, and quality factors. Validated with Spearman IC, IC_IR and Fama-MacBeth cross-sectional regression. Full backtest pipeline with transaction cost modeling.",
-    "p3.s1":"Backtest",
-    "p3.type":"Research · Done","p3.field":"Quant Finance",
-    "p3.m1":"Factor categories","p3.m2":"Validation metric","p3.m3":"Full backtest","p3.m3v":"With cost",
-    "p3.fig1":"Equity Curve","p3.fig2":"IC Decay","p3.fig3":"Quantile Returns","p3.fig3sub":"Decile sort performance",
-    "p3.overview":"Combines three classic factor families (value, momentum, quality) into an A-share stock selection strategy. Spearman IC and IC_IR evaluate factor monotonicity and stability; Fama-MacBeth cross-sectional regression tests explanatory power after controlling for other risks; full backtest includes commissions, slippage, and realistic transaction frictions.",
-    "p3.method":"Cross-sectional Z-Score normalization with industry and market-cap neutralization at the factor level. Layered weighting for portfolio construction. Backtest incorporates two-way commissions, market impact, and minimum position constraints.",
+    "p3.name":"AFAC2026: Automated Experiments under Sparse Feedback",
+    "p3.badge":"Interim A leaderboard · 3rd",
+    "p3.desc":"Led research planning and experiment management for graph node classification and recommendation. Reached third place on the interim A leaderboard; final B leaderboard rank: 18 out of 846 teams.",
+    "p3.role":"Team Research Lead",
+    "p3.field":"Graph Learning · Automated Machine Learning",
+    "p3.overview":"Led task analysis, technical planning, candidate selection, and submissions. Combined node attributes and graph signals for classification and recommendation, screened models using cross-validation, OOF predictions, and multiple validation splits, and established experiment logging, recovery, and budget control.",
+    "p3.keywords":"Graph learning · Recommendation · OOF validation · Experiment Agent",
+    "p3.m1":"Interim A leaderboard rank",
+    "p3.m2":"Final B rank stated on the certificate",
+    "p3.m3":"Automated experiments & reproducibility",
+    "p3.certificate":"Tianchi AFAC2026 certificate · Team 苦来兮苦 · B leaderboard rank 18 · August 31, 2026",
     "p4.name":"World Rendering Competition Entry",
     "p4.desc":"Entry for the 11th World Rendering Competition built in Blender. Two years of 3D modeling experience covering modeling, materials, lighting, and rendering.",
     "p4.s1":"Rendering","p4.s2":"Lighting",
