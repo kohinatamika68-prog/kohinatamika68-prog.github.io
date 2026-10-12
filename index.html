@@ -433,6 +433,11 @@ footer .green{color:var(--green);}
 .paper-note{font-size:.72rem;color:var(--muted);margin-top:1rem;line-height:1.7;}
 @media(max-width:640px){.paper-card{grid-template-columns:1fr;}.paper-info{padding:1.4rem;}.paper-preview{aspect-ratio:1/1.02;}.papers-heading{align-items:flex-start;}.papers-heading h2{font-size:1.5rem;}.paper-controls{gap:.5rem;}}
 @media(prefers-reduced-motion:reduce){.paper-card{transition:none;}}
+.project-figures{display:grid;gap:2rem;}
+.project-figures figure{margin:0;min-width:0;}
+.project-figures a{display:block;background:#fff;padding:8px;border:1px solid var(--border);}
+.project-figures img{display:block;width:100%;height:auto;}
+.project-figures figcaption{font-size:.8rem;color:var(--text2);line-height:1.6;margin-top:.8rem;}
 </style>
 </head>
 <body class="lang-zh">
@@ -558,21 +563,17 @@ footer .green{color:var(--green);}
 
     <a class="project-card" onclick="openProject('p1');return false;" href="#">
       <div class="proj-id">PROJECT_01 · 2026<span class="proj-status wip" data-i18n="status.wip">进行中</span></div>
-      <div class="proj-name" data-i18n="p1.name">大语言模型幻觉检测</div>
-      <div class="proj-desc" data-i18n="p1.desc">从统计学视角量化大语言模型输出的事实不一致性，采用统计散度度量与校准框架建模 LLM 幻觉。</div>
-      <div class="proj-stack">
-        <span class="stag">LLM</span><span class="stag">Python</span><span class="stag" data-i18n="p1.s1">统计散度</span><span class="stag" data-i18n="p1.s2">校准框架</span>
-      </div>
+      <div class="proj-name" data-i18n="p1.name">自适应图平滑与风险驱动参数选择</div>
+      <div class="proj-desc" data-i18n="p1.desc">以完整 Stein 风险估计选择自适应图平滑参数，结合森林结构评估图信号与图像的重建误差。</div>
+      <div class="proj-stack"><span class="stag" data-i18n="p1.keywords">SURE · 自适应平滑 · 森林 · 选定逆元</span></div>
       <div class="proj-arrow" data-i18n="proj.view">→ 查看详情</div>
     </a>
 
     <a class="project-card" onclick="openProject('p2');return false;" href="#">
-      <div class="proj-id">PROJECT_02 · 2025<span class="proj-status done" data-i18n="status.done">已完成</span></div>
-      <div class="proj-name" data-i18n="p2.name">NLP 驱动的金融情感分析</div>
-      <div class="proj-desc" data-i18n="p2.desc">基于 BERT 等预训练模型对 A 股财经新闻与财报文本进行情绪提取，构建情绪 Alpha 因子并在截面数据上验证预测能力。</div>
-      <div class="proj-stack">
-        <span class="stag">BERT</span><span class="stag">NLP</span><span class="stag">Python</span><span class="stag" data-i18n="p2.s1">Alpha 因子</span>
-      </div>
+      <div class="proj-id">PROJECT_02 · 2026<span class="proj-status wip" data-i18n="status.wip">进行中</span></div>
+      <div class="proj-name" data-i18n="p2.name">ACAR：交易成本感知的股票组合残差学习</div>
+      <div class="proj-desc" data-i18n="p2.desc">围绕平滑参考预测学习残差调整，在计入交易成本的组合执行中比较净收益、夏普比率和换手率。</div>
+      <div class="proj-stack"><span class="stag" data-i18n="p2.keywords">组合学习 · 交易成本 · 残差学习 · 预测平滑</span></div>
       <div class="proj-arrow" data-i18n="proj.view">→ 查看详情</div>
     </a>
 
@@ -825,32 +826,14 @@ footer .green{color:var(--green);}
 <div class="overlay" id="overlay-p1">
   <button class="overlay-close" onclick="closeProject()" data-i18n="overlay.close">✕ 关闭</button>
   <div class="overlay-inner">
-    <div class="overlay-breadcrumb">~/ <span data-i18n="nav.projects">projects</span> / llm-hallucination</div>
-    <h2 data-i18n="p1.name">大语言模型幻觉检测</h2>
-    <div class="overlay-meta">
-      <span><b data-i18n="meta.year">年份：</b>2026</span>
-      <span><b data-i18n="meta.type">类型：</b><span data-i18n="p1.type">研究 · 进行中</span></span>
-      <span><b data-i18n="meta.field">领域：</b><span data-i18n="p1.field">NLP · 统计推断</span></span>
-    </div>
-    <div class="overlay-section">
-      <div class="overlay-section-title" data-i18n="overlay.screenshots">截图 / 图表</div>
-      <div class="img-gallery">
-        <div class="img-slot"><img src="" alt=""><div class="img-placeholder"><div class="img-icon">📊</div><div class="img-label" data-i18n="img.fig1">图 1</div><div class="img-sub" data-i18n="img.add">在此添加图片</div></div></div>
-        <div class="img-slot"><img src="" alt=""><div class="img-placeholder"><div class="img-icon">📈</div><div class="img-label" data-i18n="img.fig2">图 2</div><div class="img-sub" data-i18n="p1.fig2sub">校准曲线</div></div></div>
-        <div class="img-slot img-full"><img src="" alt=""><div class="img-placeholder"><div class="img-icon">🏗</div><div class="img-label" data-i18n="img.arch">架构图</div><div class="img-sub" data-i18n="p1.archsub">幻觉检测框架</div></div></div>
-      </div>
-    </div>
-    <div class="overlay-section">
-      <div class="overlay-section-title" data-i18n="overlay.overview">项目概述</div>
-      <div class="overlay-body" data-i18n="p1.overview">从统计学视角量化大语言模型输出的事实不一致性。采用统计散度度量（KL 散度、JS 散度）与校准框架对 LLM 的不确定性进行建模，建立可解释的幻觉检测体系。研究致力于在生成式 AI 的可靠性评估方向贡献统计学方法论。</div>
-    </div>
-    <div class="overlay-section">
-      <div class="overlay-section-title" data-i18n="overlay.method">研究方法</div>
-      <div class="overlay-body" data-i18n="p1.method">基于概率校准（probability calibration）与不确定性量化（uncertainty quantification）框架，对 LLM 输出 token 的置信度进行建模，并通过散度度量识别事实性偏离。</div>
-    </div>
-    <div class="overlay-section">
-      <div class="overlay-section-title" data-i18n="overlay.stack">技术栈</div>
-      <div class="overlay-stack"><span class="overlay-stag">Python</span><span class="overlay-stag">PyTorch</span><span class="overlay-stag">Transformers</span><span class="overlay-stag" data-i18n="p1.s1">统计散度</span><span class="overlay-stag" data-i18n="p1.s2">校准框架</span><span class="overlay-stag">Bayesian</span></div>
+    <div class="overlay-breadcrumb">~/ projects / sivp</div>
+    <h2 data-i18n="p1.name">自适应图平滑与风险驱动参数选择</h2>
+    <div class="overlay-meta"><span>2026</span><span data-i18n="p1.type">研究 · 进行中</span><span data-i18n="p1.field">图信号处理 · 风险估计</span></div>
+    <div class="overlay-section"><div class="overlay-body" data-i18n="p1.desc">以完整 Stein 风险估计选择自适应图平滑参数，结合森林结构评估图信号与图像的重建误差。</div></div>
+    <div class="overlay-section"><div class="overlay-body" data-i18n="p1.keywords">SURE · 自适应平滑 · 森林 · 选定逆元</div></div>
+    <div class="project-figures">
+      <figure><a href="assets/projects/sivp-fig1.webp" target="_blank" rel="noopener"><img src="assets/projects/sivp-fig1.webp" alt="Fig. 1: Complete-SURE parameter selection workflow" loading="lazy"></a><figcaption data-i18n="p1.fig1">Fig. 1 · 完整 SURE 参数选择流程</figcaption></figure>
+      <figure><a href="assets/projects/sivp-fig2.webp" target="_blank" rel="noopener"><img src="assets/projects/sivp-fig2.webp" alt="Selection gains across images" loading="lazy"></a><figcaption data-i18n="p1.fig2">Fig. 2(a) · 图像间的选择收益分布</figcaption></figure>
     </div>
   </div>
 </div>
@@ -858,32 +841,14 @@ footer .green{color:var(--green);}
 <div class="overlay" id="overlay-p2">
   <button class="overlay-close" onclick="closeProject()" data-i18n="overlay.close">✕ 关闭</button>
   <div class="overlay-inner">
-    <div class="overlay-breadcrumb">~/ <span data-i18n="nav.projects">projects</span> / financial-sentiment</div>
-    <h2 data-i18n="p2.name">NLP 驱动的金融情感分析</h2>
-    <div class="overlay-meta">
-      <span><b data-i18n="meta.year">年份：</b>2025</span>
-      <span><b data-i18n="meta.type">类型：</b><span data-i18n="p2.type">研究 · 已完成</span></span>
-      <span><b data-i18n="meta.field">领域：</b><span data-i18n="p2.field">NLP · 量化金融</span></span>
-    </div>
-    <div class="overlay-section">
-      <div class="overlay-section-title" data-i18n="overlay.screenshots">截图 / 图表</div>
-      <div class="img-gallery">
-        <div class="img-slot"><img src="" alt=""><div class="img-placeholder"><div class="img-icon">📰</div><div class="img-label" data-i18n="p2.fig1">情感分布</div><div class="img-sub" data-i18n="img.add">在此添加图片</div></div></div>
-        <div class="img-slot"><img src="" alt=""><div class="img-placeholder"><div class="img-icon">📊</div><div class="img-label" data-i18n="p2.fig2">IC 时序</div><div class="img-sub" data-i18n="p2.fig2sub">Alpha 因子表现</div></div></div>
-        <div class="img-slot img-full"><img src="" alt=""><div class="img-placeholder"><div class="img-icon">🏗</div><div class="img-label" data-i18n="img.arch">架构图</div><div class="img-sub" data-i18n="p2.archsub">BERT 情感提取管道</div></div></div>
-      </div>
-    </div>
-    <div class="overlay-section">
-      <div class="overlay-section-title" data-i18n="overlay.overview">项目概述</div>
-      <div class="overlay-body" data-i18n="p2.overview">基于 BERT 等中文预训练模型，对 A 股财经新闻与上市公司财报文本进行情绪极性提取。将日度情绪聚合为股票级别的情绪 Alpha 因子，在截面数据上通过 IC、IC_IR 等指标验证其对未来收益的预测能力。</div>
-    </div>
-    <div class="overlay-section">
-      <div class="overlay-section-title" data-i18n="overlay.method">研究方法</div>
-      <div class="overlay-body" data-i18n="p2.method">数据源涵盖财经新闻、研报、年报。使用预训练 BERT 在金融语料上微调，输出 token 级别情感分数后聚合至股票-日维度。引入文本质量加权与时间衰减，构建可交易的情绪因子。</div>
-    </div>
-    <div class="overlay-section">
-      <div class="overlay-section-title" data-i18n="overlay.stack">技术栈</div>
-      <div class="overlay-stack"><span class="overlay-stag">Python</span><span class="overlay-stag">BERT</span><span class="overlay-stag">Transformers</span><span class="overlay-stag">Pandas</span><span class="overlay-stag" data-i18n="p2.s1">Alpha 因子</span><span class="overlay-stag" data-i18n="p2.s2">截面回归</span></div>
+    <div class="overlay-breadcrumb">~/ projects / acar</div>
+    <h2 data-i18n="p2.name">ACAR：交易成本感知的股票组合残差学习</h2>
+    <div class="overlay-meta"><span>2026</span><span data-i18n="p2.type">研究 · 进行中</span><span data-i18n="p2.field">量化金融 · 组合学习</span></div>
+    <div class="overlay-section"><div class="overlay-body" data-i18n="p2.desc">围绕平滑参考预测学习残差调整，在计入交易成本的组合执行中比较净收益、夏普比率和换手率。</div></div>
+    <div class="overlay-section"><div class="overlay-body" data-i18n="p2.keywords">组合学习 · 交易成本 · 残差学习 · 预测平滑</div></div>
+    <div class="project-figures">
+      <figure><a href="assets/projects/acar-fig1.webp" target="_blank" rel="noopener"><img src="assets/projects/acar-fig1.webp" alt="Fig. 1: ACAR architecture and portfolio execution" loading="lazy"></a><figcaption data-i18n="p2.fig1">Fig. 1 · ACAR 架构与组合执行流程</figcaption></figure>
+      <figure><a href="assets/projects/acar-fig2.webp" target="_blank" rel="noopener"><img src="assets/projects/acar-fig2.webp" alt="Net-wealth paths across predictors" loading="lazy"></a><figcaption data-i18n="p2.fig2">Fig. 2 · 不同预测器的净值路径</figcaption></figure>
     </div>
   </div>
 </div>
@@ -1006,20 +971,20 @@ const i18n = {
     "papers.stein-risk.status":"编辑处理中 · WE",
     "papers.stein-risk.role":"共同第一作者 / 通讯作者",
     "status.wip":"进行中","status.done":"已完成",
-    "p1.name":"大语言模型幻觉检测",
-    "p1.desc":"从统计学视角量化大语言模型输出的事实不一致性，采用统计散度度量与校准框架建模 LLM 幻觉。",
-    "p1.s1":"统计散度","p1.s2":"校准框架",
-    "p1.type":"研究 · 进行中","p1.field":"NLP · 统计推断",
-    "p1.fig2sub":"校准曲线","p1.archsub":"幻觉检测框架",
-    "p1.overview":"从统计学视角量化大语言模型输出的事实不一致性。采用统计散度度量（KL 散度、JS 散度）与校准框架对 LLM 的不确定性进行建模，建立可解释的幻觉检测体系。研究致力于在生成式 AI 的可靠性评估方向贡献统计学方法论。",
-    "p1.method":"基于概率校准（probability calibration）与不确定性量化（uncertainty quantification）框架，对 LLM 输出 token 的置信度进行建模，并通过散度度量识别事实性偏离。",
-    "p2.name":"NLP 驱动的金融情感分析",
-    "p2.desc":"基于 BERT 等预训练模型对 A 股财经新闻与财报文本进行情绪提取，构建情绪 Alpha 因子并在截面数据上验证预测能力。",
-    "p2.s1":"Alpha 因子","p2.s2":"截面回归",
-    "p2.type":"研究 · 已完成","p2.field":"NLP · 量化金融",
-    "p2.fig1":"情感分布","p2.fig2":"IC 时序","p2.fig2sub":"Alpha 因子表现","p2.archsub":"BERT 情感提取管道",
-    "p2.overview":"基于 BERT 等中文预训练模型，对 A 股财经新闻与上市公司财报文本进行情绪极性提取。将日度情绪聚合为股票级别的情绪 Alpha 因子，在截面数据上通过 IC、IC_IR 等指标验证其对未来收益的预测能力。",
-    "p2.method":"数据源涵盖财经新闻、研报、年报。使用预训练 BERT 在金融语料上微调，输出 token 级别情感分数后聚合至股票-日维度。引入文本质量加权与时间衰减，构建可交易的情绪因子。",
+    "p1.name":"自适应图平滑与风险驱动参数选择",
+    "p1.desc":"以完整 Stein 风险估计选择自适应图平滑参数，结合森林结构评估图信号与图像的重建误差。",
+    "p1.field":"图信号处理 · 风险估计",
+    "p1.keywords":"SURE · 自适应平滑 · 森林 · 选定逆元",
+    "p1.type":"研究 · 进行中",
+    "p1.fig1":"Fig. 1 · 完整 SURE 参数选择流程",
+    "p1.fig2":"Fig. 2(a) · 图像间的选择收益分布",
+    "p2.name":"ACAR：交易成本感知的股票组合残差学习",
+    "p2.desc":"围绕平滑参考预测学习残差调整，在计入交易成本的组合执行中比较净收益、夏普比率和换手率。",
+    "p2.field":"量化金融 · 组合学习",
+    "p2.keywords":"组合学习 · 交易成本 · 残差学习 · 预测平滑",
+    "p2.type":"研究 · 进行中",
+    "p2.fig1":"Fig. 1 · ACAR 架构与组合执行流程",
+    "p2.fig2":"Fig. 2 · 不同预测器的净值路径",
     "p3.name":"多因子量化选股策略",
     "p3.desc":"融合价值、动量、质量三类因子，采用 Spearman IC、IC_IR 及 Fama-MacBeth 截面回归验证有效性，完成含交易成本建模的全流程回测。",
     "p3.s1":"回测",
@@ -1140,20 +1105,20 @@ const i18n = {
     "papers.stein-risk.status":"With Editor · WE",
     "papers.stein-risk.role":"Co-first / corresponding author",
     "status.wip":"WIP","status.done":"Done",
-    "p1.name":"LLM Hallucination Detection",
-    "p1.desc":"Quantifying factual inconsistencies in LLM outputs from a statistical perspective. Statistical divergence measures and calibration frameworks for modeling hallucinations.",
-    "p1.s1":"Statistical Divergence","p1.s2":"Calibration",
-    "p1.type":"Research · WIP","p1.field":"NLP · Statistical Inference",
-    "p1.fig2sub":"Calibration curve","p1.archsub":"Hallucination detection framework",
-    "p1.overview":"Quantifies factual inconsistencies in LLM outputs from a statistical perspective. Uses divergence measures (KL, JS) and calibration frameworks to model LLM uncertainty, building an interpretable hallucination detection system. Aims to contribute statistical methodology to the reliability evaluation of generative AI.",
-    "p1.method":"Built on probability calibration and uncertainty quantification frameworks. Models confidence over output tokens and identifies factual deviations via divergence measures.",
-    "p2.name":"NLP-Driven Financial Sentiment Analysis",
-    "p2.desc":"Extracting sentiment from A-share financial news and earnings reports with pretrained models (BERT) to construct sentiment Alpha factors and validate cross-sectional predictive power.",
-    "p2.s1":"Alpha Factor","p2.s2":"Cross-Section",
-    "p2.type":"Research · Done","p2.field":"NLP · Quant Finance",
-    "p2.fig1":"Sentiment Distribution","p2.fig2":"IC Time Series","p2.fig2sub":"Alpha factor performance","p2.archsub":"BERT sentiment pipeline",
-    "p2.overview":"Polarity extraction from A-share financial news and listed company reports using Chinese pretrained BERT. Aggregates daily sentiment into stock-level Alpha factors and validates predictive power on cross-sectional returns via IC and IC_IR.",
-    "p2.method":"Data covers news, research reports, and annual reports. BERT fine-tuned on financial corpus produces token-level sentiment scores, aggregated to stock-day level. Text quality weighting and time decay introduced to construct tradable sentiment factors.",
+    "p1.name":"Adaptive Graph Smoothing & Risk-Based Parameter Selection",
+    "p1.desc":"Complete Stein risk estimation and forest structure for adaptive smoothing parameter selection.",
+    "p1.field":"Graph Signal Processing · Risk Estimation",
+    "p1.keywords":"SURE · Adaptive smoothing · Forests · Selected inversion",
+    "p1.type":"Research · In progress",
+    "p1.fig1":"Fig. 1 · Complete-SURE parameter selection workflow",
+    "p1.fig2":"Fig. 2(a) · Selection gains across images",
+    "p2.name":"ACAR: Cost-Aware Residual Learning for Stock Allocation",
+    "p2.desc":"Residual adjustments around smoothed reference forecasts, evaluated through net returns, Sharpe ratios, and turnover after trading costs.",
+    "p2.field":"Quantitative Finance · Portfolio Learning",
+    "p2.keywords":"Portfolio learning · Transaction costs · Residual learning · Forecast smoothing",
+    "p2.type":"Research · In progress",
+    "p2.fig1":"Fig. 1 · ACAR architecture and portfolio execution",
+    "p2.fig2":"Fig. 2 · Net-wealth paths across predictors",
     "p3.name":"Multi-Factor Quant Stock Strategy",
     "p3.desc":"Combining value, momentum, and quality factors. Validated with Spearman IC, IC_IR and Fama-MacBeth cross-sectional regression. Full backtest pipeline with transaction cost modeling.",
     "p3.s1":"Backtest",
